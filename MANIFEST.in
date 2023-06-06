@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include cbigdl_education *.css
+recursive-include cbigdl_education *.csv
+recursive-include cbigdl_education *.html
+recursive-include cbigdl_education *.ico
+recursive-include cbigdl_education *.js
+recursive-include cbigdl_education *.json
+recursive-include cbigdl_education *.md
+recursive-include cbigdl_education *.png
+recursive-include cbigdl_education *.py
+recursive-include cbigdl_education *.svg
+recursive-include cbigdl_education *.txt
+recursive-exclude cbigdl_education *.pyc
