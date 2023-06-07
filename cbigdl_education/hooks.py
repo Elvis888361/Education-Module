@@ -199,3 +199,10 @@ app_license = "MIT"
 # auth_hooks = [
 #	"cbigdl_education.auth.validate"
 # ]
+
+fixtures = [
+    "Client Script",
+    "Custom Field",
+	"Print Format",
+	"Property Setter"
+]
