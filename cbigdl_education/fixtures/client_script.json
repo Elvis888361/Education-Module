@@ -1,1 +1,13 @@
-[]
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Examination Marks Entry",
+  "enabled": 1,
+  "modified": "2023-06-08 13:25:43.242318",
+  "module": "Cbigdl Education",
+  "name": "Student Marks",
+  "script": "frappe.ui.form.on('Examination Marks Entry', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})\n\nfrappe.ui.form.on('Student Marks', {\n\trefresh(frm) {\n\t\t\n\t},\n\tstatus: function(frm, cdt, cdn) {\n\t    let item = locals[cdt][cdn];\n        frappe.call({\n\t\t\tmethod: 'cbigdl_education.cbigdl_education.doctype.examination_marks_entry.examination_marks_entry.get_grade',\n\t\t\targs: {\n\t\t\t\t'cat_marks':item.cat_marks,\n\t\t\t\t'exam_marks':item.exam_marks,\n\t\t\t\t'grade_format':frm.doc.grade_format\n\t\t\t},\n\t\t\tcallback: function(r) {\n\t\t\t\tlet student_name=r.message\n\t\t\t\tfrappe.model.set_value(cdt,cdn,\"total_marks\",student_name[1])\n\t\t\t\tfrappe.model.set_value(cdt,cdn,\"grade\",student_name[0])\n\t\t\t}\n\t\t});\n    }\n});\n",
+  "view": "Form"
+ }
+]
