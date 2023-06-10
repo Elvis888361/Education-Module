@@ -192,10 +192,15 @@ app_license = "MIT"
 #		"doctype": "{doctype_4}"
 #	}
 # ]
-
 # Authentication and authorization
 # --------------------------------
 
 # auth_hooks = [
 #	"cbigdl_education.auth.validate"
 # ]
+fixtures = [
+    "Client Script",
+    "Custom Field",
+    "Print Format",
+    "Property Setter"
+]

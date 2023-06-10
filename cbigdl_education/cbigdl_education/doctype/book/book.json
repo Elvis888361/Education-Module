@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{publisher}-{year}-{###}",
+ "creation": "2023-06-07 19:09:04.594665",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "publisher",
+  "column_break_4nj3f",
+  "year",
+  "section_break_zfrbb",
+  "items",
+  "qty_received",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "publisher",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Publisher",
+   "options": "Book  Publisher",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Received",
+   "reqd": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Books",
+   "options": "Book Items"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Book",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4nj3f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zfrbb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qty_received",
+   "fieldtype": "Data",
+   "label": "Total Quantity Received",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-10 18:26:41.276276",
+ "modified_by": "Administrator",
+ "module": "Cbigdl Education",
+ "name": "Book",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
