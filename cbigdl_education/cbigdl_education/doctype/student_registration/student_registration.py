@@ -75,3 +75,5 @@ class StudentRegistration(Document):
 			}
 		)
 		customer.insert()
+
+
