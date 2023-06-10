@@ -1,0 +1,230 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{admission_number}",
+ "creation": "2023-06-07 20:24:12.330349",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "student_details_section",
+  "student_name",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "date_of_birth",
+  "age",
+  "column_break_tkpti",
+  "admission_number",
+  "joining_date",
+  "nemis_number",
+  "gender",
+  "religion",
+  "previous_school",
+  "guardian_details_tab",
+  "guardian_details_section",
+  "guardians",
+  "sibling_details_section",
+  "siblings",
+  "attachments_tab",
+  "attachments_section",
+  "kcpe_certificate",
+  "column_break_cmsiq",
+  "birth_certificate",
+  "exit_tab",
+  "section_break_2hnpd",
+  "date_of_leaving",
+  "leaving_certificate_number",
+  "column_break_qx9bl",
+  "reason_for_leaving"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name (Optional)"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Student Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "admission_number",
+   "fieldtype": "Data",
+   "label": "Admission Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "nemis_number",
+   "fieldtype": "Data",
+   "label": "NEMIS Number"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Gender",
+   "options": "\nMale\nFemale"
+  },
+  {
+   "default": "Christian",
+   "fieldname": "religion",
+   "fieldtype": "Select",
+   "label": "Religion (Optional)",
+   "options": "Christian\nMuslim\nOther"
+  },
+  {
+   "fieldname": "previous_school",
+   "fieldtype": "Data",
+   "label": "Previous School"
+  },
+  {
+   "fieldname": "student_details_section",
+   "fieldtype": "Section Break",
+   "label": "Student Details"
+  },
+  {
+   "fieldname": "column_break_tkpti",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "guardian_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Relations"
+  },
+  {
+   "fieldname": "guardians",
+   "fieldtype": "Table",
+   "label": "Guardians",
+   "options": "Student Guardian"
+  },
+  {
+   "fieldname": "sibling_details_section",
+   "fieldtype": "Section Break",
+   "label": " Sibling Details"
+  },
+  {
+   "fieldname": "siblings",
+   "fieldtype": "Table",
+   "label": "Siblings",
+   "options": "Student Sibling"
+  },
+  {
+   "fieldname": "guardian_details_section",
+   "fieldtype": "Section Break",
+   "label": "Guardian Details"
+  },
+  {
+   "fieldname": "attachments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "kcpe_certificate",
+   "fieldtype": "Attach",
+   "label": "KCPE Certificate / Result Slip"
+  },
+  {
+   "fieldname": "birth_certificate",
+   "fieldtype": "Attach",
+   "label": "Birth Certificate"
+  },
+  {
+   "fieldname": "column_break_cmsiq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exit_tab",
+   "fieldtype": "Tab Break",
+   "label": "Exit"
+  },
+  {
+   "fieldname": "section_break_2hnpd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "leaving_certificate_number",
+   "fieldtype": "Data",
+   "label": "Leaving Certificate Number"
+  },
+  {
+   "fieldname": "column_break_qx9bl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason_for_leaving",
+   "fieldtype": "Text",
+   "label": "Reason For Leaving"
+  },
+  {
+   "fieldname": "date_of_leaving",
+   "fieldtype": "Date",
+   "label": "Date of Leaving"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Date of Admission"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Age",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-08 01:11:19.304592",
+ "modified_by": "Administrator",
+ "module": "Cbigdl Education",
+ "name": "Student Registration",
+ "name_case": "UPPER CASE",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -9,9 +9,9 @@ from cbigdl_education import __version__ as version
 setup(
 	name="cbigdl_education",
 	version=version,
-	description="cbigdl",
-	author="kevin",
-	author_email="kuriakevin06@gmail.com",
+	description="Education Management System",
+	author="cbigdl",
+	author_email="gkdevs50@gmail.com",
 	packages=find_packages(),
 	zip_safe=False,
 	include_package_data=True,

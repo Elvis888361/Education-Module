@@ -1,7 +1,7 @@
-// Copyright (c) 2023, kevin and contributors
+// Copyright (c) 2023, cbigdl and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Book Record', {
+frappe.ui.form.on('Student Registration', {
 	// refresh: function(frm) {
 
 	// }
