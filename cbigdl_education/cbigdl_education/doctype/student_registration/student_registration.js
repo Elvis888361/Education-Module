@@ -2,15 +2,13 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Student Registration', {
-	// refresh: function(frm) {
-	// 	frappe.call({
-	// 		method: 'cbigdl_education.cbigdl_education.doctype.student_registration.student_registration.sms',
-	// 		args: {
-				
-	// 		},
-	// 		callback: function(r) {
-				
-	// 		}
-	// 	});
-	// }
+    student_group: function(frm) {
+        cur_frm.fields_dict['class'].get_query = function(doc) {
+            return {
+                filters: {
+                    "parent": frm.doc.student_group,
+                }
+            }
+        }
+    }
 });

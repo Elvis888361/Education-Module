@@ -23,6 +23,10 @@
   "gender",
   "religion",
   "previous_school",
+  "section_break_rqrhc",
+  "student_group",
+  "column_break_tvtqz",
+  "class",
   "guardian_details_tab",
   "guardian_details_section",
   "guardians",
@@ -199,11 +203,37 @@
    "in_list_view": 1,
    "label": "Age",
    "read_only": 1
+  },
+  {
+   "fieldname": "student_group",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Student Group",
+   "options": "Class Group"
+  },
+  {
+   "fieldname": "column_break_tvtqz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "class",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Class",
+   "options": "Class"
+  },
+  {
+   "fieldname": "section_break_rqrhc",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-08 01:11:19.304592",
+ "modified": "2023-06-10 19:17:17.537619",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Student Registration",
