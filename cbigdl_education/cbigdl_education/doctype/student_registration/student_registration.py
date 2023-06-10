@@ -6,7 +6,6 @@ import dateutil
 from frappe import _
 from frappe.utils import getdate, today
 from frappe.model.document import Document
-# import africastalking
 
 class StudentRegistration(Document):
 	def validate(self):
@@ -76,14 +75,3 @@ class StudentRegistration(Document):
 			}
 		)
 		customer.insert()
-# @frappe.whitelist()
-# def sms():
-# 	username = 'sandbox'
-# 	api_key = 'b3c2f533dce1c081a4d547429d91342f4657d49f2a694185100d7bb03dba2cdc'
-# 	africastalking.initialize(username,api_key)
-# 	sms = africastalking.SMS
-# 	message = "Hello, this is a test message."
-# 	recipients = ['+254745638455']  # Replace with the recipient's phone number
-
-# 	response = sms.send(message, recipients)
-# 	print(response)
