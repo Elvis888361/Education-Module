@@ -2,6 +2,25 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Item",
+  "enabled": 1,
+  "modified": "2023-06-09 18:24:26.650571",
+  "module": "Cbigdl Education",
+  "name": "Item",
+  "script": "frappe.ui.form.on('Item', {\n\trefresh(frm) {\n\t\t// your code here\n\t},\n\n\t\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Employee",
+  "enabled": 1,
+  "modified": "2023-06-10 19:06:49.842002",
+  "module": "Cbigdl Education",
+  "name": "Employee",
+  "script": "frappe.ui.form.on('Employee', {\n\trefresh(frm) {\n    \n\t\tfrm.set_df_property(\"designation\", \"reqd\", 1);\n\t}\n})",
+  "view": "Form"
+ },{
   "dt": "Examination Marks Entry",
   "enabled": 1,
   "modified": "2023-06-08 13:25:43.242318",
