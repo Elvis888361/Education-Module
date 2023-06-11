@@ -1,57 +1,38 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{item_code}-{class}-{purpose}",
- "creation": "2023-06-08 16:29:16.932413",
+ "autoname": "format:{student_group}",
+ "creation": "2023-06-11 09:17:45.986630",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "item_code",
-  "class",
-  "purpose",
-  "quantity"
+  "student_group",
+  "class"
  ],
  "fields": [
   {
-   "fieldname": "item_code",
-   "fieldtype": "Link",
+   "fieldname": "student_group",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Book Name",
-   "options": "Item",
+   "label": "Student Group",
    "reqd": 1
   },
   {
    "fieldname": "class",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Class Group",
-   "options": "Class Group",
-   "reqd": 1
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Quantity Available",
-   "read_only": 1
-  },
-  {
-   "fieldname": "purpose",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Purpose",
-   "options": "\nStudent Book\nTeachers Guide\nRevision",
+   "fieldtype": "Table",
+   "label": "Class",
+   "options": "Class",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-11 09:19:01.530279",
+ "modified": "2023-06-11 09:18:03.814443",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
- "name": "Library",
+ "name": "Class Group",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
