@@ -24,10 +24,10 @@
   },
   {
    "fieldname": "class",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Class Group",
-   "options": "Class Group",
+   "options": "\nForm 1\nForm 2\nForm 3\nForm 4",
    "reqd": 1
   },
   {
@@ -48,7 +48,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-11 09:19:01.530279",
+ "modified": "2023-06-11 10:30:43.531198",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Library",
