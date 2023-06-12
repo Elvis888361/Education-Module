@@ -2,12 +2,10 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe import _
 from frappe.model.document import Document
 
-class StudentResult(Document):
+class StudentIndividualResult(Document):
 	pass
-
 @frappe.whitelist()
 def get_student_result(doc):
 	student_data = frappe.db.sql("""
@@ -29,5 +27,4 @@ def get_student_result(doc):
 			t1.name = t2.parent;
 	""", as_dict=1
 	)
-	print(f"\n\n\n{student_data}")
 	return student_data
