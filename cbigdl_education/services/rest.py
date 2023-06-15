@@ -1,5 +1,6 @@
 import frappe
 
+
 @frappe.whitelist()
 def update_number_of_books(name):
     # Retrieve book information from the 'Book Items' table
@@ -57,8 +58,6 @@ def get_teacher_name(teacher_number):
 def update_qty_in_library(book_description,qty_to_issue, qty_in_library):
     new_qty_in_library = int(qty_in_library) - int(qty_to_issue)
     frappe.db.set_value('Library', {'name': book_description}, 'quantity',new_qty_in_library)
-
-#updating quantity in library from book transfer
 
 @frappe.whitelist()
 def update_new_qty_in_library(book_description,qty_to_issue, qty_in_library):
@@ -147,3 +146,4 @@ def get_book_details(doc):
     """
     book_details = frappe.db.sql(sql_book_details, as_dict=True)
     return book_details
+

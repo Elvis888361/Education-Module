@@ -15,4 +15,7 @@ frappe.ui.form.on('Book Record', {
 		// 	};
 		// 	});
 	}
+	// refresh: function(frm) {
+
+	// }
 });
