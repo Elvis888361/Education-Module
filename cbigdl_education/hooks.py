@@ -206,6 +206,8 @@ fixtures = [
 ]
 jinja = {
     "methods": [
-    "cbigdl_education.cbigdl_education.doctype.student_result.student_result.get_student_result"
+    "cbigdl_education.cbigdl_education.doctype.student_result.student_result.get_student_result",
+    "cbigdl_education.cbigdl_education.doctype.examination_marks_entry.examination_marks_entry.get_student_result",
+    "cbigdl_education.cbigdl_education.doctype.student_individual_result.student_individual_result.get_student_name"
     ]
 }
