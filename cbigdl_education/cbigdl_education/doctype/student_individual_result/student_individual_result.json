@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{admission_number}-Result",
+ "creation": "2023-06-12 18:28:36.689892",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "admission_number",
+  "form",
+  "column_break_k3v8x",
+  "academic_term"
+ ],
+ "fields": [
+  {
+   "fieldname": "admission_number",
+   "fieldtype": "Link",
+   "label": "Admission Number",
+   "options": "Student Registration"
+  },
+  {
+   "fieldname": "form",
+   "fieldtype": "Select",
+   "label": "Form",
+   "options": "Form 1\nForm 2\nForm 3\nForm 4"
+  },
+  {
+   "fieldname": "column_break_k3v8x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "academic_term",
+   "fieldtype": "Link",
+   "label": "Academic Term",
+   "options": "Academic Terms"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-12 18:35:34.733562",
+ "modified_by": "Administrator",
+ "module": "Cbigdl Education",
+ "name": "Student Individual Result",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

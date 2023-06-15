@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{form}-{subject}-results",
+ "creation": "2023-06-08 08:04:11.338008",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subject",
+  "column_break_xxe2e",
+  "grade_format",
+  "section_break_vq8nq",
+  "form",
+  "column_break_l3tfp",
+  "academic_terms",
+  "section_break_a3kio",
+  "student_marks"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_xxe2e",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grade_format",
+   "fieldtype": "Link",
+   "label": "Grade Format",
+   "options": "Grading Configuration"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Subject",
+   "options": "Add Subjects"
+  },
+  {
+   "fieldname": "form",
+   "fieldtype": "Select",
+   "label": "Form",
+   "options": "Form 1\nForm 2\nForm 3\nForm 4"
+  },
+  {
+   "fieldname": "section_break_vq8nq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_a3kio",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "student_marks",
+   "fieldtype": "Table",
+   "in_standard_filter": 1,
+   "label": "Student Marks",
+   "options": "Student Marks"
+  },
+  {
+   "fieldname": "column_break_l3tfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "academic_terms",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Academic Term",
+   "options": "Academic Terms"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-15 13:35:00.090231",
+ "modified_by": "Administrator",
+ "module": "Cbigdl Education",
+ "name": "Examination Marks Entry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
