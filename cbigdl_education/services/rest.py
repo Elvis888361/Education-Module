@@ -1,6 +1,5 @@
 import frappe
 
-<<<<<<< HEAD
 @frappe.whitelist()
 def update_number_of_books(name):
     # Retrieve book information from the 'Book Items' table
@@ -59,14 +58,12 @@ def update_qty_in_library(book_description,qty_to_issue, qty_in_library):
     new_qty_in_library = int(qty_in_library) - int(qty_to_issue)
     frappe.db.set_value('Library', {'name': book_description}, 'quantity',new_qty_in_library)
 
-
+#updating quantity in library from book transfer
 @frappe.whitelist()
 def update_new_qty_in_library(book_description,qty_to_issue, qty_in_library):
     new_qty_in_library = int(qty_in_library) + int(qty_to_issue)
     frappe.db.set_value('Library', {'name': book_description}, 'quantity',new_qty_in_library)
 
-
-=======
 @frappe.whitelist(allow_guest=True)
 def create_student_result(admission_number,form,marks,grade):
     student_exists=frappe.db.sql(f"""SELECT COUNT(admission_number) FROM Student Result WHERE admission_number={admission_number} AND form={form}""")
@@ -82,5 +79,67 @@ def create_student_result(admission_number,form,marks,grade):
         frappe.db.commit()
     else:
         print(student_exists)
-    
->>>>>>> eaee8299007b46efbb045a034b186f8db9a2a3ae
+
+
+#get which class the book belong from library
+@frappe.whitelist()
+def get_class(book_description):
+    class_group= frappe.db.get_value('Library', {"name": book_description}, "class")
+    return class_group
+
+#update the status of book in the book record to issued
+@frappe.whitelist()
+def update_book_status_to_issued(book_number, admission_number):
+    frappe.db.set_value('Book Record', book_number, 'status', 'Issued')
+    frappe.db.set_value('Book Record', book_number, 'issued_to', admission_number)
+
+
+# Update the status of the book in the book record to available
+@frappe.whitelist()
+def update_book_status_to_available(book_number,admission_number):
+    frappe.db.set_value('Book Record', book_number, 'status', 'Available')
+    frappe.db.set_value('Book Record', book_number, 'received_from',admission_number)
+
+#update who is issued book in book record form student book record
+@frappe.whitelist()
+def get_admission_issued_book(book_number):
+    admission_issued_book = frappe.db.get_value("Book Record", {"name": book_number}, 'issued_to')
+    return admission_issued_book
+
+
+#update number of books in library from student book record
+@frappe.whitelist()
+def update_number_of_books_in_library(book_description):
+    qty_from_library = frappe.db.get_value('Library', {'name': book_description}, 'quantity')
+    new_qty_in_library = int(qty_from_library) + 1
+    frappe.db.set_value('Library', {'name': book_description}, 'quantity',new_qty_in_library)
+
+
+@frappe.whitelist()
+def get_student_name(student_admission):
+    student_name = frappe.db.get_value('Student Registration', {'name': student_admission}, 'student_name')
+    return student_name
+   
+
+@frappe.whitelist()
+def get_staff_name(cleared_by):
+    staff_name = frappe.db.get_value('Employee', {'name': cleared_by}, 'first_name')
+    return staff_name
+
+
+
+@frappe.whitelist()
+def get_book_details(doc):
+    sql_book_details= f"""
+	SELECT 
+      book_description,
+      class_group,
+      book_number,
+      issued_to
+	FROM
+	  `tabBook Record`
+    WHERE
+        status = "Issued"
+    """
+    book_details = frappe.db.sql(sql_book_details, as_dict=True)
+    return book_details

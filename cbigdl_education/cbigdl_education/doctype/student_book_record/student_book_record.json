@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-11 15:14:59.408328",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "is_returned",
+  "section_break_fnxwb",
+  "book_description",
+  "class",
+  "admission_number",
+  "column_break_kkmfe",
+  "class_group",
+  "book_number",
+  "year",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "is_returned",
+   "fieldtype": "Check",
+   "label": "Is Return(Check Only When Student is Returning a Book)"
+  },
+  {
+   "fieldname": "book_description",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Book Description",
+   "options": "Library",
+   "reqd": 1
+  },
+  {
+   "fieldname": "class_group",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Class Group",
+   "read_only": 1
+  },
+  {
+   "fieldname": "class",
+   "fieldtype": "Link",
+   "label": "Class",
+   "options": "Class",
+   "reqd": 1
+  },
+  {
+   "fieldname": "book_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Book Number",
+   "options": "Book Record",
+   "reqd": 1
+  },
+  {
+   "fieldname": "admission_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Admission Number",
+   "options": "Student Registration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_fnxwb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kkmfe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Student Book Record",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-14 19:45:26.977954",
+ "modified_by": "Administrator",
+ "module": "Cbigdl Education",
+ "name": "Student Book Record",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

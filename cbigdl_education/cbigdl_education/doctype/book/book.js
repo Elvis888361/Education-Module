@@ -6,15 +6,15 @@ frappe.ui.form.on('Book', {
 	},
 
 	on_submit: function(frm) {
-			frappe.call({
-				method: 'cbigdl_education.services.rest.update_number_of_books',
-				args: {
-					'name': frm.doc.name
-				},
-				callback: function(r) {
-					// The update_number_of_books function has finished executing
-				},
-		});
+		frappe.call({
+			method: 'cbigdl_education.services.rest.update_number_of_books',
+			args: {
+				'name': frm.doc.name
+			},
+			callback: function(r) {
+				// The update_number_of_books function has finished executing
+			},
+	});
 	}
 });
 

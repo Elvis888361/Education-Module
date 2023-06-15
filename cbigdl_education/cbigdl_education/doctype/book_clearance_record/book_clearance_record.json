@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{student_admission}-{clearance_date}",
+ "creation": "2023-06-14 19:20:26.589097",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "student_admission",
+  "column_break_ow93b",
+  "student_name",
+  "section_break_jd0ad",
+  "clearance_date",
+  "section_break_ovsl7",
+  "cleared_by",
+  "column_break_8v6zo",
+  "staff_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "student_admission",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Student Admission",
+   "options": "Student Registration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ow93b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jd0ad",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "clearance_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Clearance Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_8v6zo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cleared_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cleared By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ovsl7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "label": "Staff Name",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-14 19:43:29.237212",
+ "modified_by": "Administrator",
+ "module": "Cbigdl Education",
+ "name": "Book Clearance Record",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
