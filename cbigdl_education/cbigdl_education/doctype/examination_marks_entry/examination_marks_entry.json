@@ -32,6 +32,9 @@
   {
    "fieldname": "subject",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Subject",
    "options": "Add Subjects"
   },
@@ -52,6 +55,7 @@
   {
    "fieldname": "student_marks",
    "fieldtype": "Table",
+   "in_standard_filter": 1,
    "label": "Student Marks",
    "options": "Student Marks"
   },
@@ -62,13 +66,15 @@
   {
    "fieldname": "academic_terms",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Academic Term",
    "options": "Academic Terms"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-08 13:51:19.533769",
+ "modified": "2023-06-15 13:35:00.090231",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Examination Marks Entry",

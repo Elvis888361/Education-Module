@@ -18,13 +18,27 @@ def get_student_result(doc):
 			t2.grade,
 			t2.cat_marks,
 			t2.exam_marks,
-			t2.total_marks
+			t2.total_marks,
+			t3.admission_number,
+			t3.student_name
 		FROM
 			`tabExamination Marks Entry` t1
 		JOIN
-			`tabStudent Marks` t2
-		ON
-			t1.name = t2.parent;
+			`tabStudent Marks` t2 ON t1.name = t2.parent
+		JOIN
+			`tabStudent Registration` t3 ON t2.admission_number = t3.name;
+	""", as_dict=1
+	)
+	return student_data
+
+@frappe.whitelist()
+def get_student_name(doc):
+	student_data = frappe.db.sql("""
+		SELECT
+			admission_number,
+			student_name
+		FROM
+			`tabStudent Registration`
 	""", as_dict=1
 	)
 	return student_data

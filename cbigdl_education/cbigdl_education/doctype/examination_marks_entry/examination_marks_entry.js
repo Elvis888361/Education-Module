@@ -2,6 +2,7 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Examination Marks Entry', {
+	
 	academic_terms: function(frm) {
 		frappe.call({
 			method: 'cbigdl_education.cbigdl_education.doctype.examination_marks_entry.examination_marks_entry.get_name',
