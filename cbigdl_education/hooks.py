@@ -203,11 +203,9 @@ app_license = "MIT"
 fixtures = [
     "Client Script",
     "Custom Field",
-	"Print Format",
-	"Property Setter"
+    "Print Format",
+    "Property Setter"
 ]
-<<<<<<< HEAD
-=======
 jinja = {
     "methods": [
     "cbigdl_education.cbigdl_education.doctype.student_result.student_result.get_student_result",
@@ -215,4 +213,4 @@ jinja = {
     "cbigdl_education.cbigdl_education.doctype.student_individual_result.student_individual_result.get_student_name"
     ]
 }
->>>>>>> 5c68fb0 (changes exam)
+

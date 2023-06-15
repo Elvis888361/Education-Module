@@ -2,8 +2,7 @@
 # For license information, please see license.txt
 
 # import frappe
+from frappe.model.document import Document
 
-
-def execute(filters=None):
-	columns, data = [], []
-	return columns, data
+class AddSubjects(Document):
+	pass

@@ -1,6 +1,6 @@
 ## Cbigdl Education
 
-Education Management System
+cbigdl
 
 #### License
 

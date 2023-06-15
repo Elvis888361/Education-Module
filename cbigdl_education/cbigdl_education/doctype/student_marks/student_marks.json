@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{admission_number}{###}",
+ "creation": "2023-06-08 12:14:50.333654",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "admission_number",
+  "cat_marks",
+  "exam_marks",
+  "status",
+  "total_marks",
+  "grade"
+ ],
+ "fields": [
+  {
+   "fieldname": "admission_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Admission Number",
+   "options": "Student Registration"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Grade"
+  },
+  {
+   "fieldname": "cat_marks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cat Marks(/30)"
+  },
+  {
+   "fieldname": "exam_marks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Exam Marks(/70)"
+  },
+  {
+   "fieldname": "total_marks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Marks(/100)"
+  },
+  {
+   "default": "0",
+   "fieldname": "status",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-08 14:01:04.294616",
+ "modified_by": "Administrator",
+ "module": "Cbigdl Education",
+ "name": "Student Marks",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
