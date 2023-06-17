@@ -8,13 +8,16 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "is_returned",
+  "column_break_qre2e",
+  "section_break_zusre",
   "teacher_number",
   "book_description",
-  "is_returned",
+  "qty_to_issue",
   "section_break_v6icn",
   "full_name",
   "qty_in_library",
-  "qty_to_issue",
+  "date",
   "amended_from"
  ],
  "fields": [
@@ -73,13 +76,27 @@
    "fieldname": "is_returned",
    "fieldtype": "Check",
    "in_standard_filter": 1,
-   "label": "Is Returned"
+   "label": "Is Returned(Check only when excess books are returned)"
+  },
+  {
+   "fieldname": "column_break_qre2e",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zusre",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-10 20:26:57.174576",
+ "modified": "2023-06-17 10:23:59.202700",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Book Transfer",

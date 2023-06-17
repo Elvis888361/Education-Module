@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "is_returned",
+  "column_break_ykaee",
+  "issue",
   "section_break_fnxwb",
   "book_description",
   "class",
@@ -85,12 +87,21 @@
    "options": "Student Book Record",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ykaee",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issue",
+   "fieldtype": "Data",
+   "label": "Issue"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 19:45:26.977954",
+ "modified": "2023-06-17 09:36:23.983919",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Student Book Record",

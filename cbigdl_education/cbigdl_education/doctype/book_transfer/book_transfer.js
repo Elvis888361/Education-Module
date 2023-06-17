@@ -13,6 +13,11 @@ frappe.ui.form.on('Book Transfer', {
 		  });
 	},
 
+	before_save: function(frm){
+		let date = frappe.datetime.get_today()
+		frm.set_value("date", date);
+	},
+
 	book_description: function(frm){
 		frappe.call({
 			method: 'cbigdl_education.services.rest.get_qty_from_library',

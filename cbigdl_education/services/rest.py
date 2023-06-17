@@ -119,7 +119,12 @@ def update_number_of_books_in_library(book_description):
 def get_student_name(student_admission):
     student_name = frappe.db.get_value('Student Registration', {'name': student_admission}, 'student_name')
     return student_name
-   
+#update number of books in library from student book record when issued direct from library
+@frappe.whitelist()
+def update_number_of_books(book_description):
+    qty_from_library = frappe.db.get_value('Library', {'name': book_description}, 'quantity')
+    new_qty_in_library = int(qty_from_library) - 1
+    frappe.db.set_value('Library', {'name': book_description}, 'quantity',new_qty_in_library)
 
 @frappe.whitelist()
 def get_staff_name(cleared_by):
@@ -135,11 +140,10 @@ def get_book_details(doc):
       book_description,
       class_group,
       book_number,
-      issued_to
+      issued_to,
+      status
 	FROM
 	  `tabBook Record`
-    WHERE
-        status = "Issued"
     """
     book_details = frappe.db.sql(sql_book_details, as_dict=True)
     return book_details

@@ -12,11 +12,11 @@
   "column_break_ow93b",
   "student_name",
   "section_break_jd0ad",
-  "clearance_date",
-  "section_break_ovsl7",
   "cleared_by",
   "column_break_8v6zo",
-  "staff_name"
+  "staff_name",
+  "section_break_ovsl7",
+  "clearance_date"
  ],
  "fields": [
   {
@@ -46,7 +46,7 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Clearance Date",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "column_break_8v6zo",
@@ -73,7 +73,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 19:43:29.237212",
+ "modified": "2023-06-17 10:25:40.936216",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Book Clearance Record",

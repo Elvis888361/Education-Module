@@ -19,6 +19,11 @@ frappe.ui.form.on('Book Clearance Record', {
 	});
 	},
 
+	before_save: function(frm){
+		let date = frappe.datetime.get_today()
+		frm.set_value("clearance_date", date);
+	},
+
 
 	cleared_by: function(frm){
 		frappe.call({
