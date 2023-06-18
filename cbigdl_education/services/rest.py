@@ -59,6 +59,7 @@ def update_qty_in_library(book_description,qty_to_issue, qty_in_library):
     frappe.db.set_value('Library', {'name': book_description}, 'quantity',new_qty_in_library)
 
 #updating quantity in library from book transfer
+
 @frappe.whitelist()
 def update_new_qty_in_library(book_description,qty_to_issue, qty_in_library):
     new_qty_in_library = int(qty_in_library) + int(qty_to_issue)
@@ -79,7 +80,6 @@ def create_student_result(admission_number,form,marks,grade):
         frappe.db.commit()
     else:
         print(student_exists)
-
 
 #get which class the book belong from library
 @frappe.whitelist()

@@ -192,12 +192,14 @@ app_license = "MIT"
 #		"doctype": "{doctype_4}"
 #	}
 # ]
+
 # Authentication and authorization
 # --------------------------------
 
 # auth_hooks = [
 #	"cbigdl_education.auth.validate"
 # ]
+
 fixtures = [
     "Client Script",
     "Custom Field",
@@ -207,6 +209,9 @@ fixtures = [
 jinja = {
     "methods": [
     "cbigdl_education.cbigdl_education.doctype.student_result.student_result.get_student_result",
-    "cbigdl_education.services.rest.get_book_details"
+    "cbigdl_education.services.rest.get_book_details",
+    "cbigdl_education.cbigdl_education.doctype.examination_marks_entry.examination_marks_entry.get_student_result",
+    "cbigdl_education.cbigdl_education.doctype.student_individual_result.student_individual_result.get_student_name"
     ]
 }
+  

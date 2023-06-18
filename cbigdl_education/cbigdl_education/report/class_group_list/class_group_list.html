@@ -1,0 +1,102 @@
+<style>
+    .body {
+        margin-top: 20px;
+    }
+
+    .document {
+        font-size: 11px;
+    }
+
+    .table {
+        font-weight: bold;
+    }
+
+    /* Head row */
+    .header th{
+        background-color: rgb(1, 96, 14);
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    /* Even rows */
+    tbody tr:nth-child(even) {
+        background-color: rgb(213, 255, 223);
+    }
+
+    /* Odd rows */
+    tbody tr:nth-child(odd) {
+        background-color: white;
+    }
+
+
+</style>
+
+
+<div class="body">
+
+    <div class="row">
+        <div class="col-md-12" style="padding-top:30px;">
+            <h1 style="text-align:center;"><b>NYAITUGA SECONDARY SCHOOL</b></h1>
+            <h3 style="text-align:center;">NAKURU</h3>
+            <table class="table">
+                <tr>
+
+                    <td style="width:50%; text-align:center;">
+                        <h2 class="text-center" style="padding-top:30px;">
+                            {{ "CLASS GROUP LIST" }}
+                        </h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-10">
+            <table style="width:100%; margin-top:-20px;">
+                <tr>
+                    <td><b>CLASS GROUP:</b> {{ data[0].student_group }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="row document">
+        <div class="col-md-12">
+
+            <table class="table table-bordered">
+
+                <thead class="header">
+                    <tr>
+                        <th style="width: 5%">No.</th>
+                        <th style="width: 15">{%= __("ADMISSION NUMBER") %}</th>
+                        <th style="width: 15">{%= __("STUDENT NAME") %}</th>
+                        <th style="width: 10">{%= __("GENDER") %}</th>
+                        <th style="width: 10">{%= __("AGE") %}</th>
+                        <th style="width: 10">{%= __("CLASS") %}</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for(var i=0, l=data.length; i<l; i++) { %}
+                    <tr>
+                        <td>{{ i+1 }}</td> 
+                        <td>{%= data[i].admission_number %}</td>
+                        <td>{%= data[i].student_name %}</td>
+                        <td>{%= data[i].gender %}</td>
+                        <td>{%= data[i].age %}</td>
+                        <td>{%= data[i].class %}</td>
+                    </tr>
+                {% } %}
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>

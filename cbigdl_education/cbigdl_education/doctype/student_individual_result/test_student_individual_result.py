@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestBookClearanceRecord(FrappeTestCase):
+class TestStudentIndividualResult(FrappeTestCase):
 	pass
