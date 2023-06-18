@@ -13,6 +13,25 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Employee",
+  "enabled": 1,
+  "modified": "2023-06-11 12:52:11.385361",
+  "module": "Cbigdl Education",
+  "name": "Employee",
+  "script": "frappe.ui.form.on('Employee', {\n\trefresh(frm) {\n\t\tfrm.set_df_property('designation', 'reqd', 1)\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Book Record",
+  "enabled": 1,
+  "modified": "2023-06-11 15:02:51.551455",
+  "module": "Cbigdl Education",
+  "name": "Book Record",
+  "script": "frappe.ui.form.on('Book Record', {\n\trefresh(frm) {\n\t\tfrm.set_df_property('class', 'hidden', 1)\n\t},\n\t\n\tbook_number: function(frm){\n\t    frm.set_value('status', \"Available\")\n\t}\n\t\n\t\n})",
+  "view": "Form"
+ },{
   "dt": "Grading Configuration",
   "enabled": 1,
   "modified": "2023-06-15 10:33:23.819981",
@@ -22,3 +41,4 @@
   "view": "Form"
  }
 ]
+  

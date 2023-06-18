@@ -2,6 +2,9 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Examination Marks Entry', {
+	// refresh: function(frm) {
+	// },
+
 	
 	academic_terms: function(frm) {
 		frappe.call({

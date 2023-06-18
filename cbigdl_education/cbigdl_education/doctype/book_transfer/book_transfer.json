@@ -8,6 +8,16 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "is_returned",
+  "column_break_qre2e",
+  "section_break_zusre",
+  "teacher_number",
+  "book_description",
+  "qty_to_issue",
+  "section_break_v6icn",
+  "full_name",
+  "qty_in_library",
+  "date",
   "teacher_number",
   "book_description",
   "is_returned",
@@ -73,6 +83,20 @@
    "fieldname": "is_returned",
    "fieldtype": "Check",
    "in_standard_filter": 1,
+   "label": "Is Returned(Check only when excess books are returned)"
+  },
+  {
+   "fieldname": "column_break_qre2e",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zusre",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "read_only": 1,
    "label": "Is Returned"
   }
  ],
