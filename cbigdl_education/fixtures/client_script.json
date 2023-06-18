@@ -4,34 +4,15 @@
   "doctype": "Client Script",
   "dt": "Examination Marks Entry",
   "enabled": 1,
-  "modified": "2023-06-15 10:25:06.545452",
+  "modified": "2023-06-18 12:07:25.354981",
   "module": "Cbigdl Education",
   "name": "Student Marks",
-  "script": "frappe.ui.form.on('Examination Marks Entry', {\n\trefresh(frm) {\n\t\tvar admissionNumbers = frm.doc.student_marks.map(function(row) {\n            return row.admission_number;\n        });\n\n        // Set query filter for the admission_number field\n        frm.fields_dict.student_marks.grid.get_field('admission_number').get_query = function(doc) {\n            return {\n                filters: {\n                    'name': ['not in', admissionNumbers]\n                }\n            };\n        };\n\t}\n})\n\nfrappe.ui.form.on('Student Marks', {\n\trefresh: function(frm, cdt, cdn) {\n\t\tfrm.set_query('admission_number', function() {\n            return {\n                filters: {\n                    'status': 1\n                }\n            };\n        });\n\t},\n\tstatus: function(frm, cdt, cdn) {\n\t    let item = locals[cdt][cdn];\n        frappe.call({\n\t\t\tmethod: 'cbigdl_education.cbigdl_education.doctype.examination_marks_entry.examination_marks_entry.get_grade',\n\t\t\targs: {\n\t\t\t\t'cat_marks':item.cat_marks,\n\t\t\t\t'exam_marks':item.exam_marks,\n\t\t\t\t'grade_format':frm.doc.grade_format\n\t\t\t},\n\t\t\tcallback: function(r) {\n\t\t\t\tlet student_name=r.message\n\t\t\t\tfrappe.model.set_value(cdt,cdn,\"total_marks\",student_name[1])\n\t\t\t\tfrappe.model.set_value(cdt,cdn,\"grade\",student_name[0])\n\t\t\t}\n\t\t});\n    }\n});\n",
+  "script": "frappe.ui.form.on('Examination Marks Entry', {\n\trefresh(frm) {\n\t\tvar admissionNumbers = frm.doc.student_marks.map(function(row) {\n            return row.admission_number;\n        });\n        console.log(frm.doc.form)\n\n        // Set query filter for the admission_number field\n        frm.fields_dict.student_marks.grid.get_field('admission_number').get_query = function(doc) {\n            return {\n                filters: {\n                    'name': ['not in', admissionNumbers]\n                }\n            };\n        };\n\t}\n})\n\nfrappe.ui.form.on('Student Marks', {\n\trefresh: function(frm, cdt, cdn) {\n\t\tfrm.set_query('admission_number', function() {\n            return {\n                filters: {\n                    'status': 1\n                }\n            };\n        });\n\t},\n\tstatus: function(frm, cdt, cdn) {\n\t    let item = locals[cdt][cdn];\n        frappe.call({\n\t\t\tmethod: 'cbigdl_education.cbigdl_education.doctype.examination_marks_entry.examination_marks_entry.get_grade',\n\t\t\targs: {\n\t\t\t\t'cat_marks':item.cat_marks,\n\t\t\t\t'exam_marks':item.exam_marks,\n\t\t\t\t'grade_format':frm.doc.grade_format\n\t\t\t},\n\t\t\tcallback: function(r) {\n\t\t\t\tlet student_name=r.message\n\t\t\t\tfrappe.model.set_value(cdt,cdn,\"total_marks\",student_name[1])\n\t\t\t\tfrappe.model.set_value(cdt,cdn,\"grade\",student_name[0])\n\t\t\t}\n\t\t});\n    }\n});\n",
   "view": "Form"
  },
  {
   "docstatus": 0,
   "doctype": "Client Script",
-  "dt": "Employee",
-  "enabled": 1,
-  "modified": "2023-06-11 12:52:11.385361",
-  "module": "Cbigdl Education",
-  "name": "Employee",
-  "script": "frappe.ui.form.on('Employee', {\n\trefresh(frm) {\n\t\tfrm.set_df_property('designation', 'reqd', 1)\n\t}\n})",
-  "view": "Form"
- },
- {
-  "docstatus": 0,
-  "doctype": "Client Script",
-  "dt": "Book Record",
-  "enabled": 1,
-  "modified": "2023-06-11 15:02:51.551455",
-  "module": "Cbigdl Education",
-  "name": "Book Record",
-  "script": "frappe.ui.form.on('Book Record', {\n\trefresh(frm) {\n\t\tfrm.set_df_property('class', 'hidden', 1)\n\t},\n\t\n\tbook_number: function(frm){\n\t    frm.set_value('status', \"Available\")\n\t}\n\t\n\t\n})",
-  "view": "Form"
- },{
   "dt": "Grading Configuration",
   "enabled": 1,
   "modified": "2023-06-15 10:33:23.819981",
@@ -41,4 +22,3 @@
   "view": "Form"
  }
 ]
-  

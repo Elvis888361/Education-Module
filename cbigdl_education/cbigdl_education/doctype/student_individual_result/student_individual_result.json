@@ -22,9 +22,9 @@
   },
   {
    "fieldname": "form",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Form",
-   "options": "Form 1\nForm 2\nForm 3\nForm 4"
+   "options": "Class Group"
   },
   {
    "fieldname": "column_break_k3v8x",
@@ -39,7 +39,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-12 18:35:34.733562",
+ "modified": "2023-06-18 12:08:20.236629",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Student Individual Result",
