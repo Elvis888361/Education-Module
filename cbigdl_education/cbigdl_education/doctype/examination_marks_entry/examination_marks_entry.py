@@ -9,7 +9,8 @@ class ExaminationMarksEntry(Document):
 
 @frappe.whitelist()
 def get_grade(cat_marks,exam_marks,grade_format):
-	marks=int(cat_marks)+int(exam_marks)
+	cat=(float(cat_marks)/100)*30
+	marks=cat+float(exam_marks)
 	grade_fromat=frappe.db.get_all('Grade Format', {'parent':grade_format}, ['grade','max_scale','min_scale'])
 	for scale in grade_fromat:
 		if(scale['min_scale'] <=int(marks)<=scale['max_scale']):

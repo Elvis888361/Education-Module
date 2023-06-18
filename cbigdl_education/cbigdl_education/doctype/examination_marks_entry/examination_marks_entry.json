@@ -40,9 +40,9 @@
   },
   {
    "fieldname": "form",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Form",
-   "options": "Form 1\nForm 2\nForm 3\nForm 4"
+   "options": "Class Group"
   },
   {
    "fieldname": "section_break_vq8nq",
@@ -74,7 +74,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-15 13:35:00.090231",
+ "modified": "2023-06-18 11:56:17.745540",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Examination Marks Entry",

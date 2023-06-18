@@ -15,9 +15,9 @@
  "fields": [
   {
    "fieldname": "form",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Form",
-   "options": "Form 1\nForm 2\nForm 3\nForm 4"
+   "options": "Class Group"
   },
   {
    "fieldname": "column_break_uducs",
@@ -32,7 +32,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-09 07:26:06.013164",
+ "modified": "2023-06-18 12:08:57.710878",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Student Result",
