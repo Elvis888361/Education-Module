@@ -20,5 +20,60 @@
   "name": "Grading System",
   "script": "frappe.ui.form.on('Grading Configuration', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})\n\nfrappe.ui.form.on('Grade Format', {\n\t\n\tmax_scale:function(frm, cdt, cdn){\n\t    let item = locals[cdt][cdn];\n\t\tif (item.max_scale > 100) {\n\t\t\tfrappe.model.set_value(cdt, cdn, 'max_scale', 100);\n\t\t\tfrappe.throw('Maximum scale cannot be more than 100.');\n\t\t}\n\t\tlet row = frm.doc.grade_formats.find(row => row.name === item.name);\n\n\t\tif (row && item.min_scale <= row.min_scale) {\n\t\t\tfrappe.model.set_value(cdt, cdn, 'max_scale', row.min_scale - 1);\n\t\t\tfrappe.throw('Maximum scale must be less than the next row\\'s minimum scale minus 1.');\n\t\t}\n\t},\n\t\tmin_scale:function(frm, cdt, cdn){\n    \t    let item = locals[cdt][cdn];\n    \t\tif (item.min_scale < 0) {\n    \t\t\tfrappe.model.set_value(cdt, cdn, 'min_scale', 0);\n    \t\t\tfrappe.throw('Minimum scale cannot be less than 0.');\n    \t\t}\n    \t\t\n\t}\n})",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Class Group",
+  "enabled": 1,
+  "modified": "2023-07-01 10:31:01.947160",
+  "module": "Cbigdl Education",
+  "name": "Class Group",
+  "script": "frappe.ui.form.on('Class Group', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})\n\n\nfrappe.ui.form.on(\"Class\", {\n\tclass_group_name: function(frm, cdt, cdn) {\n\t\tlet item = locals[cdt][cdn]\n\t\tlet student_group =frm.doc.student_group\n\t\tvar class_group_name =item.class_group_name\n\t\tlet class_name = student_group + \" \" + class_group_name\n\t\tfrappe.model.set_value(cdt, cdn, {\n\t\t\t'class_name':class_name,\n\t}) \n},\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Item",
+  "enabled": 1,
+  "modified": "2023-07-01 15:38:18.278795",
+  "module": "Cbigdl Education",
+  "name": "Item",
+  "script": "frappe.ui.form.on('Item', {\n\trefresh(frm) {\n\t\tfrm.add_custom_button(__('Go to Book'), function(){\n        frappe.set_route('form', \"Book\", \"new-book-1\")\n    });\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Book",
+  "enabled": 1,
+  "modified": "2023-07-01 15:52:34.967657",
+  "module": "Cbigdl Education",
+  "name": "Book",
+  "script": "// Copyright (c) 2023, kevin and contributors\n// For license information, please see license.txt\n\nfrappe.ui.form.on('Book', {\n\trefresh: function(frm) {\n\t\tfrm.add_custom_button(__('Go to Library'), function(){\n\t\t\tfrappe.set_route('form', \"Library\")\n\t\t});\n\t},\n\n\t\n});\n\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Student Book Record",
+  "enabled": 1,
+  "modified": "2023-07-01 15:58:14.934899",
+  "module": "Cbigdl Education",
+  "name": "Student Book Record",
+  "script": "frappe.ui.form.on('Student Book Record', {\n\trefresh(frm) {\n\t\t// your code here\n\t},\n\t\n\ton_submit: function(frm){\n\n\t\tif(frm.doc.issue_book){\n\t\t\tfrappe.call({\n\t\t\t\tmethod: 'cbigdl_education.services.rest.update_book_status_to_issued',\n\t\t\t\targs: {\n\t\t\t\t\t'book_number': frm.doc.book_number,\n\t\t\t\t\t'admission_number': frm.doc.admission_number\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n\t\t\t\t},\n\t\t\t});\n\t\t\tfrappe.call({\n\t\t\t\tmethod: 'cbigdl_education.services.rest.update_number_of_books_from_student_record',\n\t\t\t\targs: {\n\t\t\t\t\t'book_description': frm.doc.book_description,\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n\t\t\t\t},\n\t\t\t});\n\t\t}\n\t\tif(frm.doc.is_returned){\n\t\t\tfrappe.call({\n\t\t\t\tmethod: 'cbigdl_education.services.rest.update_book_status_to_available',\n\t\t\t\targs: {\n\t\t\t\t\t'book_number': frm.doc.book_number,\n\t\t\t\t\t'admission_number': frm.doc.admission_number\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n\t\t\t\t},\n\t\t\t});\n\t\t\tfrappe.call({\n\t\t\t\tmethod: 'cbigdl_education.services.rest.update_number_of_books_in_library',\n\t\t\t\targs: {\n\t\t\t\t\t'book_description': frm.doc.book_description,\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n\t\t\t\t},\n\t\t\t});\n\t\t}else{\n\t\t\tfrappe.call({\n\t\t\t\tmethod: 'cbigdl_education.services.rest.update_book_status_to_issued',\n\t\t\t\targs: {\n\t\t\t\t\t'book_number': frm.doc.book_number,\n\t\t\t\t\t'admission_number': frm.doc.admission_number\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n\t\t\t\t},\n\t\t\t});\n\t\t}\n\t\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Book Record",
+  "enabled": 1,
+  "modified": "2023-07-01 16:11:19.798248",
+  "module": "Cbigdl Education",
+  "name": "Book Record",
+  "script": "frappe.ui.form.on('Book Record', {\n\trefresh(frm) {\n\t\t// your code here\n\t},\n\t\n\tbook_number: function(frm){\n\t    let status = \"Available\"\n\t    frm.set_value(\"status\", status)\n\t}\n})",
+  "view": "Form"
  }
 ]
