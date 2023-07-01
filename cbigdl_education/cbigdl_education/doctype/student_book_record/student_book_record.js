@@ -92,59 +92,5 @@ frappe.ui.form.on('Student Book Record', {
 				},
 			});
 		}
-	},
-
-
-	on_submit: function(frm){
-
-		if(frm.doc.issue){
-			frappe.call({
-				method: 'cbigdl_education.services.rest.update_book_status_to_issued',
-				args: {
-					'book_number': frm.doc.book_number,
-					'admission_number': frm.doc.admission_number
-				},
-				callback: function(r) {
-				},
-			});
-			frappe.call({
-				method: 'cbigdl_education.services.rest.update_number_of_books',
-				args: {
-					'book_description': frm.doc.book_description,
-				},
-				callback: function(r) {
-				},
-			});
-		}
-		if(frm.doc.is_returned){
-			frappe.call({
-				method: 'cbigdl_education.services.rest.update_book_status_to_available',
-				args: {
-					'book_number': frm.doc.book_number,
-					'admission_number': frm.doc.admission_number
-				},
-				callback: function(r) {
-				},
-			});
-			frappe.call({
-				method: 'cbigdl_education.services.rest.update_number_of_books_in_library',
-				args: {
-					'book_description': frm.doc.book_description,
-				},
-				callback: function(r) {
-				},
-			});
-		}else{
-			frappe.call({
-				method: 'cbigdl_education.services.rest.update_book_status_to_issued',
-				args: {
-					'book_number': frm.doc.book_number,
-					'admission_number': frm.doc.admission_number
-				},
-				callback: function(r) {
-				},
-			});
-		}
-	
 	}
 });

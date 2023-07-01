@@ -120,7 +120,7 @@ def get_student_name(student_admission):
     return student_name
 #update number of books in library from student book record when issued direct from library
 @frappe.whitelist()
-def update_number_of_books(book_description):
+def update_number_of_books_from_student_record(book_description):
     qty_from_library = frappe.db.get_value('Library', {'name': book_description}, 'quantity')
     new_qty_in_library = int(qty_from_library) - 1
     frappe.db.set_value('Library', {'name': book_description}, 'quantity',new_qty_in_library)

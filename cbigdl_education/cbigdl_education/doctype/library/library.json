@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{item_code}-{class}-{purpose}",
- "creation": "2023-06-08 16:29:16.932413",
+ "creation": "2023-07-01 17:42:52.633363",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -24,31 +24,30 @@
   },
   {
    "fieldname": "class",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Class",
-   "options": "\nForm 1\nForm 2\nForm 3\nForm 4",
+   "label": "Class Group",
+   "options": "Class Group",
    "reqd": 1
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Quantity Available",
-   "read_only": 1
   },
   {
    "fieldname": "purpose",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Purpose",
-   "options": "\nStudent Book\nTeachers Guide\nRevision",
+   "options": "\nStudent Book\nTeacher Guide\nRevision Book",
    "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Data",
+   "label": "Quantity Available",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-09 18:31:53.230365",
+ "modified": "2023-07-01 17:43:42.423605",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Library",
