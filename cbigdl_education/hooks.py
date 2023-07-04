@@ -204,7 +204,8 @@ fixtures = [
     "Client Script",
     "Custom Field",
     "Print Format",
-    "Property Setter"
+    "Property Setter",
+    "Class Group"
 ]
 jinja = {
     "methods": [
