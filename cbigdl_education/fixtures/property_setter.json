@@ -2558,5 +2558,37 @@
   "property_type": "Check",
   "row_name": null,
   "value": "1"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Material Request",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "set_from_warehouse",
+  "is_system_generated": 0,
+  "modified": "2023-07-06 23:47:52.259577",
+  "module": null,
+  "name": "Material Request-set_from_warehouse-reqd",
+  "property": "reqd",
+  "property_type": "Check",
+  "row_name": null,
+  "value": "1"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Material Request",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "set_warehouse",
+  "is_system_generated": 0,
+  "modified": "2023-07-06 23:48:31.507661",
+  "module": null,
+  "name": "Material Request-set_warehouse-reqd",
+  "property": "reqd",
+  "property_type": "Check",
+  "row_name": null,
+  "value": "1"
  }
 ]

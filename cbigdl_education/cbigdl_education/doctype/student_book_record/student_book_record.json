@@ -22,6 +22,7 @@
  ],
  "fields": [
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "is_returned",
    "fieldtype": "Check",
@@ -52,7 +53,11 @@
   {
    "fieldname": "book_number",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Book Number",
    "options": "Book Record",
    "reqd": 1
@@ -60,7 +65,11 @@
   {
    "fieldname": "admission_number",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Admission Number",
    "options": "Student Registration",
    "reqd": 1
@@ -69,7 +78,7 @@
    "fieldname": "year",
    "fieldtype": "Data",
    "label": "Year",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "section_break_fnxwb",
@@ -101,7 +110,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-17 09:36:23.983919",
+ "modified": "2023-07-06 23:44:25.811598",
  "modified_by": "Administrator",
  "module": "Cbigdl Education",
  "name": "Student Book Record",
