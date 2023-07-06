@@ -147,3 +147,44 @@ def get_book_details(doc):
     book_details = frappe.db.sql(sql_book_details, as_dict=True)
     return book_details
 
+# @frappe.whitelist(allow_guest=True)
+# def create_material_transfer_stock_entry(stock_entry_id):
+#     request_items= frappe.db.get_all("Material Request Item",{"parent": stock_entry_id},["from_warehouse", "warehouse", "item_code", "item_name", "qty", "rate","parenttype"])
+#     print(f"\n\n\n\n\n{request_items}\n\n\n\n\n\n")
+    
+#     items_array=[]
+  
+#     for each_item in request_items:
+        # print(f"\n\n\n\n\n theseeee  {each_item}\n\n\n\n\n\n")
+    #     items_array.append({
+    #     "s_warehouse":each_item.from_warehouse,
+    #     "t_warehouse":each_item.warehouse,
+    #     "item_code":each_item.item_code,
+    #     "qty":each_item.qty,
+    #     "item_name":each_item.item_name,
+    #     "transfer_qty":1,
+    #     "conversion_factor":2
+    # })
+
+        # stock_entry=frappe.get_doc({
+        #     "doctype":"Stock Entry",
+        #     "stock_entry_type":"Material Transfer",
+        #     "items":[{
+        #     "s_warehouse":each_item.from_warehouse,
+        #     "t_warehouse":each_item.warehouse,
+        #     "item_code":each_item.item_code,
+        #     "qty":each_item.qty,
+        #     "item_name":each_item.item_name,
+        #     "transfer_qty":1,
+        #     "conversion_factor":2
+        # }]
+        # })
+        # stock_entry.insert(ignore_permissions=True)
+        # stock_entry.save(ignore_permissions=True)
+        # stock_entry.submit()
+        # frappe.db.commit()
+
+
+@frappe.whitelist()
+def get_bin_qty(item_code,source_warehouse):
+    return frappe.db.get_value("Bin",{"item_code":item_code,"warehouse":source_warehouse},"projected_qty")    
