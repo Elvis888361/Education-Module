@@ -17,7 +17,6 @@ def update_number_of_books(name):
         item_code = book_inform.get('book_description')
         quantity = book_inform.get('quantity')
 
-        # Retrieve library information from the 'Library' table
         library_information = frappe.get_all(
             'Library',
             filters={
@@ -31,10 +30,8 @@ def update_number_of_books(name):
             library_name = library_info.get('name')
             actual_qty = library_info.get('quantity')
 
-            # Add the quantity from 'Book Items' to the 'actual_qty' in 'Library'
             new_actual_qty = int(actual_qty) + int(quantity)
 
-            # Update the 'quantity' in 'Library' with the new value
             frappe.db.set_value(
                 'Library',
                 library_name,
